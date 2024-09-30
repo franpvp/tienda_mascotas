@@ -1,0 +1,4 @@
+com/duoc/tiendamascotas/service/EnvioProductoServiceImplTest.class
+com/duoc/tiendamascotas/TiendaMascotasApplicationTests.class
+com/duoc/tiendamascotas/repository/EnvioRepositoryTest.class
+com/duoc/tiendamascotas/controller/EnvioControllerTest.class
