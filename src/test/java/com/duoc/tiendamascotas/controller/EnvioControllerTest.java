@@ -127,7 +127,7 @@ public class EnvioControllerTest {
         // Simular el servicio
         when(envioProductoService.obtenerEnvios()).thenReturn(listaDtos);
 
-        mockMvc.perform(get("/api/envio/obtener-envios")
+        mockMvc.perform(get("/api/envio/all-envios")
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

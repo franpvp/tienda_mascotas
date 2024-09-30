@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.duoc.tiendamascotas.repository.EnvioRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.578 s -- in com.duoc.tiendamascotas.repository.EnvioRepositoryTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.869 s -- in com.duoc.tiendamascotas.repository.EnvioRepositoryTest

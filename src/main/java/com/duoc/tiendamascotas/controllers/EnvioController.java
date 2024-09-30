@@ -71,7 +71,7 @@ public class EnvioController {
         return new ResponseEntity<>(responseModel, HttpStatus.OK);
     }
 
-    @GetMapping("/obtener-envios")
+    @GetMapping("/all-envios")
     public ResponseEntity<CollectionModel<EntityModel<EnvioDTO>>> obtenerEnvios() {
         List<EnvioDTO> envios = envioProductoService.obtenerEnvios();
 
