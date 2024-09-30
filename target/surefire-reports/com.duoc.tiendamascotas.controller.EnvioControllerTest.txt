@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.duoc.tiendamascotas.controller.EnvioControllerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.232 s -- in com.duoc.tiendamascotas.controller.EnvioControllerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.998 s -- in com.duoc.tiendamascotas.controller.EnvioControllerTest

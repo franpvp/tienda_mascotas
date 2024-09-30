@@ -1,15 +1,16 @@
-version: '1'
+version: '3'
 services:
   microservicio:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - no-cache=true
     ports:
       - "8080:8080"
     environment:
-      - spring.datasource.url=jdbc:oracle:thin:@mgcj9hjzndc7f1rk_high?TNS_ADMIN=/app/oracle_wallet/
+      - "spring.datasource.url=jdbc:oracle:thin:@mgcj9hjzndc7f1rk_high?TNS_ADMIN=/app/oracle_wallet/"
       - SPRING_DATASOURCE_USERNAME=BD_CITAMEDICA
       - SPRING_DATASOURCE_PASSWORD=PruebaCitaMedica.123
     restart: always
-
 
