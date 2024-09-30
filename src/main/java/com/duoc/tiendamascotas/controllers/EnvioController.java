@@ -41,6 +41,7 @@ public class EnvioController {
 
         EntityModel<EnvioDTO> envioModel = EntityModel.of(envioGenerado,
                 linkTo(methodOn(EnvioController.class).obtenerEnvioById(envioGenerado.getIdEnvio())).withSelfRel(),
+                linkTo(methodOn(EnvioController.class).modificarEstadoEnvio(envioGenerado.getIdEnvio(), envioGenerado.getIdEstadoEnvio())).withRel("modificarEstadoEnvio"),
                 linkTo(methodOn(EnvioController.class).obtenerEnvios()).withRel("allEnvios"));
 
         return new ResponseEntity<>(envioModel, HttpStatus.CREATED);
@@ -64,6 +65,7 @@ public class EnvioController {
         // Crear EntityModel con los enlaces
         EntityModel<EnvioDTO> responseModel = EntityModel.of(envioModificado,
                 linkTo(methodOn(EnvioController.class).obtenerEnvioById(envioModificado.getIdEnvio())).withSelfRel(),
+                linkTo(methodOn(EnvioController.class).eliminarEnvioById(idEnvio)).withRel("eliminarEnvio"),
                 linkTo(methodOn(EnvioController.class).obtenerEnvios()).withRel("allEnvios"));
         // Devolver la respuesta con el EntityModel y el status OK
         return new ResponseEntity<>(responseModel, HttpStatus.OK);
@@ -93,14 +95,11 @@ public class EnvioController {
         // Lógica para obtener un envío por su ID
         Optional<EnvioDTO> envio = envioProductoService.consultarEnvioById(idEnvio);
 
-        WebMvcLinkBuilder linkToEnvio = linkTo(methodOn(EnvioController.class).obtenerEnvioById(idEnvio));
-        WebMvcLinkBuilder linkToEliminarEnvio = linkTo(methodOn(EnvioController.class).eliminarEnvioById(idEnvio));
-        WebMvcLinkBuilder linkToAllEnvios = linkTo(methodOn(EnvioController.class).obtenerEnvios());
-
         EntityModel<Optional<EnvioDTO>> envioModel = EntityModel.of(envio,
-                linkToEnvio.withRel("envio"),
-                linkToEliminarEnvio.withRel("eliminarEnvio"),
-                linkToAllEnvios.withRel("allEnvios"));
+                linkTo(methodOn(EnvioController.class).obtenerEnvioById(idEnvio)).withRel("envio"),
+                linkTo(methodOn(EnvioController.class).modificarEstadoEnvio(idEnvio, envio.get().getIdEstadoEnvio())).withRel("modificarEstadoEnvio"),
+                linkTo(methodOn(EnvioController.class).eliminarEnvioById(idEnvio)).withRel("eliminarEnvio"),
+                linkTo(methodOn(EnvioController.class).obtenerEnvios()).withRel("allEnvios"));
 
         return new ResponseEntity<>(envioModel, HttpStatus.OK);
     }
